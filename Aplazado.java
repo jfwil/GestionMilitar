@@ -1,7 +1,7 @@
 public class Aplazado extends Persona {
     private String fechaAplazamiento; 
 
-    //datos a tener en cuenta
+    //ejemplo
 
     public Aplazado(String cedula, String nombre, String apellido, String fechaAplazamiento) {
         super(cedula, nombre, apellido); 
