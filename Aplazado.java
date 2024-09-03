@@ -1,6 +1,8 @@
 public class Aplazado extends Persona {
     private String fechaAplazamiento; 
 
+    //ejemplo
+
     public Aplazado(String cedula, String nombre, String apellido, String fechaAplazamiento) {
         super(cedula, nombre, apellido); 
         this.fechaAplazamiento = fechaAplazamiento; 
