@@ -1,9 +1,3 @@
-/**
- *
- * @author Santiago Ramos Narvaez    cod: 20222020164
- * @author Juan Felipe Wilches Gómez cod: 20231020137
- * @author Solanghy Catalina Ortiz   cod: 20232020325
- */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +9,7 @@ public class Controlador {
     public Controlador (){
         personas = new ArrayList<>();
         vista = new Vista(this);
-        vista.leerDatos();
+        this.empezarPrograma();
     }
 
     public void empezarPrograma() {
@@ -23,7 +17,8 @@ public class Controlador {
     }
 
     public void insertarRemiso(String cedula, String nombre, String apellido) {
-        personas.add(new Remiso(cedula, nombre, apellido));
+        personas.add(new Remiso(cedula, nombre, apellido));-
+
     }
 
     public void insertarReservista(String cedula, String nombre, String apellido, String libretaMilitar) {
