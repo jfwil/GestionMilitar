@@ -1,6 +1,9 @@
-package edu.avanzada.taller1.modelo;
-
-
+/**
+ *
+ * @author Santiago Ramos Narvaez    cod: 20222020164
+ * @author Juan Felipe Wilches Gómez cod: 20231020137
+ * @author Solanghy Catalina Ortiz   cod: 20232020325
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
