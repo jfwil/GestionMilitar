@@ -19,3 +19,4 @@ public class Reservista extends Persona {
         return super.toString() + ", Libreta Militar: " + libretaMilitar; 
     }
 }
+
