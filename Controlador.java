@@ -8,11 +8,19 @@ public class Controlador {
 
     private Persona persona;
     private List<Persona> personas;
-    private Vista ventana;
+    private Vista vista;
 
     public Controlador (){
-        ventana = new Vista(this);
-        ventana. leerDatos();
+        vista = new Vista(this);
+        vista. leerDatos();
+    }
+
+    public void insertarRemiso(String cedula, String nombre, String apellido) {
+        personas.add(new Remiso(cedula, nombre, apellido));
+    }
+
+    public void insertarReservista(String cedula, String nombre, String apellido, String libretaMilitar) {
+        personas.add(new Reservista(cedula, nombre, apellido, libretaMilitar));
     }
 
     
