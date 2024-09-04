@@ -4,18 +4,21 @@
  * @author Juan Felipe Wilches Gómez cod: 20231020137
  * @author Solanghy Catalina Ortiz   cod: 20232020325
  */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controlador { 
 
-    private Persona persona;
     private List<Persona> personas;
     private Vista vista;
 
     public Controlador (){
+        personas = new ArrayList<>();
         vista = new Vista(this);
-        vista. leerDatos();
+        vista.leerDatos();
     }
 
-     public void empezarPrograma() {
+    public void empezarPrograma() {
         vista.mostrarMenu();
     }
 
@@ -27,7 +30,7 @@ public class Controlador {
         personas.add(new Reservista(cedula, nombre, apellido, libretaMilitar));
     }
 
-     public void insertarAplazado(String cedula, String nombre, String apellido, String fechaAplazamiento) {
+    public void insertarAplazado(String cedula, String nombre, String apellido, String fechaAplazamiento) {
         personas.add(new Aplazado(cedula, nombre, apellido, fechaAplazamiento));
     }
 
@@ -35,7 +38,13 @@ public class Controlador {
         personas.add(new Reclutado(cedula, nombre, apellido, codigoMilitar)); 
     }
 
-    public void consultarPersona() {
-        
+    public void consultarPersona(String cedula) {
+        for (Persona p : personas) {
+            if (p.getCedula().equals(cedula)) {
+                vista.mostrarPersona(p);
+                return;
+            }
+        }
+        vista.mostrarMensaje("No se encontro ninguna persona con la cedula: " + cedula);
     }
 }

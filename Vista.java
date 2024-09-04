@@ -7,31 +7,28 @@ package edu.avanzada.Taller1.vista;
  * @author Solanghy Catalina Ortiz   cod: 20232020325
  */
 
-import edu.avanzada.Taller1.Aplazado;
-import edu.avanzada.Taller1.Persona;
-import edu.avanzada.Taller1.Reclutado;
-import edu.avanzada.Taller1.Remiso;
-import edu.avanzada.Taller1.Reservista;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Vista {
 
     private final Scanner scanner = new Scanner(System.in);
-    private final List<Persona> personas = new ArrayList<>();
+    private final Controlador controlador;
+
+    public Vista(Controlador controlador) {
+        this.controlador = controlador;
+    }
 
     public void mostrarMenu() {
         boolean salir = false;
-        
+
         while (!salir) {
             System.out.println("Menu Principal:");
             System.out.println("1. Ingresar una nueva persona");
             System.out.println("2. Consultar una persona");
             System.out.println("3. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -45,14 +42,14 @@ public class Vista {
                     System.out.println("Adios ^_^");
                     break;
                 default:
-                    System.out.println("Opcion no válida, intente nuevamente.");
+                    System.out.println("Opcion no valida, intente nuevamente.");
             }
         }
     }
 
     private void mostrarIngresoPersona() {
         boolean regresar = false;
-        
+
         while (!regresar) {
             System.out.println("Seleccione el tipo de persona que quiere ingresar:");
             System.out.println("1. Remiso");
@@ -62,7 +59,7 @@ public class Vista {
             System.out.println("5. Regresar al menu principal");
             System.out.print("Seleccione una opcion: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -81,76 +78,72 @@ public class Vista {
                     regresar = true;
                     break;
                 default:
-                    System.out.println("Opcion no valida, intente nuevamente.");
+                    System.out.println("Opcion no valida, intente nuevamente");
             }
         }
     }
 
     private void ingresarRemiso() {
-        System.out.println("Ingrese la cedula del remiso:");
+        System.out.print("Ingrese la cedula del remiso: ");
         String cedula = scanner.nextLine();
-        System.out.println("Ingrese el nombre del remiso:");
+        System.out.print("Ingrese el nombre del remiso: ");
         String nombre = scanner.nextLine();
-        System.out.println("Ingrese el apellido del remiso:");
+        System.out.print("Ingrese el apellido del remiso: ");
         String apellido = scanner.nextLine();
-        personas.add(new Remiso(cedula, nombre, apellido));
-        System.out.println("Remiso ingresado exitosamente.");
+        controlador.insertarRemiso(cedula, nombre, apellido);
+        System.out.println("Remiso ingresado");
     }
 
     private void ingresarReservista() {
-        System.out.println("Ingrese la cedula del reservista:");
+        System.out.print("Ingrese la cedula del reservista: ");
         String cedula = scanner.nextLine();
-        System.out.println("Ingrese el nombre del reservista:");
+        System.out.print("Ingrese el nombre del reservista: ");
         String nombre = scanner.nextLine();
-        System.out.println("Ingrese el apellido del reservista:");
+        System.out.print("Ingrese el apellido del reservista: ");
         String apellido = scanner.nextLine();
-        System.out.println("Ingrese la libreta militar del reservista:");
+        System.out.print("Ingrese la libreta militar del reservista: ");
         String libretaMilitar = scanner.nextLine();
-        personas.add(new Reservista(cedula, nombre, apellido, libretaMilitar));
-        System.out.println("Reservista ingresado exitosamente.");
+        controlador.insertarReservista(cedula, nombre, apellido, libretaMilitar);
+        System.out.println("Reservista ingresado");
     }
 
     private void ingresarAplazado() {
-        System.out.println("Ingrese la cedula del aplazado:");
+        System.out.print("Ingrese la cedula del aplazado: ");
         String cedula = scanner.nextLine();
-        System.out.println("Ingrese el nombre del aplazado:");
+        System.out.print("Ingrese el nombre del aplazado: ");
         String nombre = scanner.nextLine();
-        System.out.println("Ingrese el apellido del aplazado:");
+        System.out.print("Ingrese el apellido del aplazado: ");
         String apellido = scanner.nextLine();
-        System.out.println("Ingrese la fecha de aplazamiento:");
+        System.out.print("Ingrese la fecha de aplazamiento: ");
         String fechaAplazamiento = scanner.nextLine();
-        personas.add(new Aplazado(cedula, nombre, apellido, fechaAplazamiento));
-        System.out.println("Aplazado ingresado exitosamente.");
+        controlador.insertarAplazado(cedula, nombre, apellido, fechaAplazamiento);
+        System.out.println("Aplazado ingresado");
     }
 
     private void ingresarReclutado() {
-        System.out.println("Ingrese la cedula del reclutado:");
+        System.out.print("Ingrese la cedula del reclutado: ");
         String cedula = scanner.nextLine();
-        System.out.println("Ingrese el nombre del reclutado:");
+        System.out.print("Ingrese el nombre del reclutado: ");
         String nombre = scanner.nextLine();
-        System.out.println("Ingrese el apellido del reclutado:");
+        System.out.print("Ingrese el apellido del reclutado: ");
         String apellido = scanner.nextLine();
-        System.out.println("Ingrese el código militar:");
+        System.out.print("Ingrese el código militar: ");
         String codigoMilitar = scanner.nextLine();
-        personas.add(new Reclutado(cedula, nombre, apellido, codigoMilitar));
-        System.out.println("Reclutado ingresado exitosamente.");
+        controlador.insertarReclutado(cedula, nombre, apellido, codigoMilitar);
+        System.out.println("Reclutado ingresado");
     }
 
     private void consultarPersona() {
+        System.out.print("Ingrese la cedula de la persona a consultar: ");
         String cedula = scanner.nextLine();
-    
-    boolean personaSi = false;
+        controlador.consultarPersona(cedula);
+    }
 
-    for (Persona persona : personas) {
-        if (persona.getCedula().equals(cedula)) {
-            System.out.println("Persona encontrada:" + persona);
-            personaSi = true;
-            break;
-            }
-        }
+    public void mostrarPersona(Persona persona) {
+        System.out.println("Persona encontrada: " + persona.toString());
+    }
 
-    if (!personaSi) {
-        System.out.println("No se encontro ninguna persona con numero de cedula: " + cedula);
-        }
+    public void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
     }
 }
