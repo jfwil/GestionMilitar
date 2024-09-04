@@ -34,4 +34,8 @@ public class Controlador {
     public void insertarReclutado(String cedula, String nombre, String apellido, String codigoMilitar) {
         personas.add(new Reclutado(cedula, nombre, apellido, codigoMilitar)); 
     }
+
+    public void consultarPersona() {
+        
+    }
 }
