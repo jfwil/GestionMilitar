@@ -15,7 +15,7 @@ public class Controlador {
         vista. leerDatos();
     }
 
-     public void iniciar() {
+     public void empezarPrograma() {
         vista.mostrarMenu();
     }
 
@@ -29,11 +29,9 @@ public class Controlador {
 
      public void insertarAplazado(String cedula, String nombre, String apellido, String fechaAplazamiento) {
         personas.add(new Aplazado(cedula, nombre, apellido, fechaAplazamiento));
-        vista.mostrarMensaje("Aplazado ingresado exitosamente.");
     }
 
     public void insertarReclutado(String cedula, String nombre, String apellido, String codigoMilitar) {
-        personas.add(new Reclutado(cedula, nombre, apellido, codigoMilitar));
-        vista.mostrarMensaje("Reclutado ingresado exitosamente.");
+        personas.add(new Reclutado(cedula, nombre, apellido, codigoMilitar)); 
     }
 }
