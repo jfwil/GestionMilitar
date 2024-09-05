@@ -1,4 +1,4 @@
-package edu.avanzada.taller1.control;
+package edu.avanzada.taller1;
 
 /**
  *

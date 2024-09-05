@@ -1,24 +1,37 @@
 package edu.avanzada.Taller1;
 
-public class Reclutado extends Persona { 
-    private String codigoMilitar; 
+/**
+ *
+ * @author solan
+ */
+/**
+ * Clase que representa a una persona en estado de Reclutado.
+ */
+public class Reclutado extends Persona implements EstadoMilitar {
+    private String codigoReclutamiento;
 
-    public Reclutado(String cedula, String nombre, String apellido, String codigoMilitar) {
+    /**
+     * Constructor para crear un reclutado.
+     * 
+     * @param cedula              Cédula de la persona.
+     * @param nombre              Nombre de la persona.
+     * @param apellido            Apellido de la persona.
+     * @param codigoReclutamiento Código de reclutamiento asignado.
+     */
+    public Reclutado(String cedula, String nombre, String apellido, String codigoReclutamiento) {
         super(cedula, nombre, apellido);
-        this.codigoMilitar = codigoMilitar;
-    } 
-
-    public String getCodigoMilitar() { 
-        return codigoMilitar; 
+        this.codigoReclutamiento = codigoReclutamiento;
     }
 
-    public void setCodigoMilitar(String codigoMilitar) { 
-        this.codigoMilitar = codigoMilitar; 
-    } 
-
-    @Override 
-    public String toString() { 
-        return super.toString() + ", Codigo Militar: " + codigoMilitar; 
+    /**
+     * Devuelve el estado militar del reclutado.
+     * 
+     * @return Una cadena que indica que la persona es reclutada y su código de reclutamiento.
+     */
+    @Override
+    public String obtenerEstadoMilitar() {
+        return "Reclutado (Código de Reclutamiento: " + codigoReclutamiento + ")";
     }
 }
+
 

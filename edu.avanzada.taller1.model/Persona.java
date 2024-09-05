@@ -1,43 +1,39 @@
 package edu.avanzada.Taller1;
 
-public class Persona { 
-    private String cedula;
-    private String nombre;
-    private String apellido;
+public class Persona {
+    protected String cedula;
+    public String nombre;
+    public String apellido;
 
-    public Persona(String cedula, String nombre, String apellido) { 
-        this.nombre = nombre; 
-        this.apellido = apellido; 
-        this.cedula = cedula; 
+    /**
+     * Constructor para inicializar los atributos básicos de una persona.
+     * 
+     * @param cedula  Cédula de la persona.
+     * @param nombre  Nombre de la persona.
+     * @param apellido Apellido de la persona.
+     */
+    public Persona(String cedula, String nombre, String apellido) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
-    
+
+    /**
+     * Devuelve la cédula de la persona.
+     * 
+     * @return La cédula.
+     */
     public String getCedula() {
-        return cedula; 
-    } 
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula; 
+        return cedula;
     }
 
-
-    public String getNombre() { 
-        return nombre; 
-    } 
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre; 
-    }
-
-    public String getApellido() {
-        return apellido;
-    } 
-
-    public void setApellido(String apellido) { 
-        this.apellido = apellido;  
-    }
-
+    /**
+     * Representación en cadena de la persona, mostrando su nombre, apellido y cédula.
+     * 
+     * @return Una cadena de texto con la información básica de la persona.
+     */
     @Override
     public String toString() {
-        return "Cedula: " + cedula + ", " + nombre + " " + apellido; 
+        return nombre + " " + apellido + " (Cédula: " + cedula + ")";
     }
 }
