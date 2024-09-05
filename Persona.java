@@ -1,3 +1,5 @@
+package edu.avanzada.Taller1;
+
 public class Persona { 
     private String cedula;
     private String nombre;

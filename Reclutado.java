@@ -1,3 +1,5 @@
+package edu.avanzada.Taller1;
+
 public class Reclutado extends Persona { 
     private String codigoMilitar; 
 
@@ -19,3 +21,4 @@ public class Reclutado extends Persona {
         return super.toString() + ", Codigo Militar: " + codigoMilitar; 
     }
 }
+

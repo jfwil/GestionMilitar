@@ -1,3 +1,5 @@
+package edu.avanzada.Taller1;
+
 public class Reservista extends Persona {
     private String libretaMilitar; 
 

@@ -1,3 +1,5 @@
+package edu.avanzada.Taller1;
+
 public class Aplazado extends Persona {
     private String fechaAplazamiento; 
 
